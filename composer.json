@@ -11,9 +11,9 @@
         "wiki": "http://cms.feehi.com/help",
         "source": "https://github.com/feehi/cms"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
-        "feehi/cms-core": ">=0.1.8"
+        "feehi/cms-core": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
