@@ -8,8 +8,6 @@
 
 namespace frontend\models;
 
-use common\models\Article as CommonArticle;
-
-class Article extends CommonArticle
+class Article extends \cms\frontend\models\Article
 {
 }

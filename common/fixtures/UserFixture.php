@@ -1,9 +1,6 @@
 <?php
 namespace common\fixtures;
 
-use yii\test\ActiveFixture;
-
-class UserFixture extends ActiveFixture
+class UserFixture extends \cms\common\fixtures\UserFixture
 {
-    public $modelClass = 'common\models\User';
 }

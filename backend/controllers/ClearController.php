@@ -8,36 +8,6 @@
 
 namespace backend\controllers;
 
-use yii;
-use yii\helpers\FileHelper;
-
-
-class ClearController extends \yii\web\Controller
+class ClearController extends \cms\backend\controllers\ClearController
 {
-
-    /**
-     * 清除后台缓存
-     *
-     * @return string
-     */
-    public function actionBackend()
-    {
-        FileHelper::removeDirectory(yii::getAlias('@runtime/cache'));
-        Yii::$app->getSession()->setFlash('success', yii::t('app', 'Success'));
-        return $this->render('clear');
-    }
-
-    /**
-     * 清除后台缓存
-     *
-     * @return string
-     */
-    public function actionFrontend()
-    {
-        FileHelper::removeDirectory(yii::getAlias('@frontend/runtime/cache'));
-        Yii::$app->getSession()->setFlash('success', yii::t('app', 'Success'));
-        return $this->render('clear');
-    }
-
-
 }

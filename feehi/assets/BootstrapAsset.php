@@ -8,11 +8,6 @@
 
 namespace feehi\assets;
 
-class BootstrapAsset extends \yii\web\AssetBundle
+class BootstrapAsset extends \cms\feehi\assets\BootstrapAsset
 {
-    public $sourcePath = '@bower/bootstrap/dist';
-
-    public $css = [
-        'css/bootstrap.css',
-    ];
 }

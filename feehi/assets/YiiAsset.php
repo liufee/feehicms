@@ -8,15 +8,6 @@
 
 namespace feehi\assets;
 
-class YiiAsset extends \yii\web\AssetBundle
+class YiiAsset extends \cms\feehi\assets\YiiAsset
 {
-    public $sourcePath = '@yii/assets';
-
-    public $js = [
-        'yii.js',
-    ];
-
-    public $depends = [
-        'feehi\assets\JqueryAsset',
-    ];
 }

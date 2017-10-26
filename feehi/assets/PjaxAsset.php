@@ -8,15 +8,6 @@
 
 namespace feehi\assets;
 
-class PjaxAsset extends \yii\web\AssetBundle
+class PjaxAsset extends \cms\feehi\assets\PjaxAsset
 {
-    public $sourcePath = '@bower/yii2-pjax';
-
-    public $js = [
-        'jquery.pjax.js',
-    ];
-
-    public $depends = [
-        'feehi\assets\YiiAsset',
-    ];
 }

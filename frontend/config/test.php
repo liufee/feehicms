@@ -10,5 +10,12 @@ return [
             'showScriptName' => true,
             'rules' => []
         ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@frontend/views' => '@cms/frontend/views',
+                ],
+            ],
+        ]
     ],
 ];

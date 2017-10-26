@@ -7,6 +7,6 @@ $resetLink = Yii::$app->urlManager->createAbsoluteUrl(['admin-user/reset-passwor
 ?>
 Hello <?= $user->username ?>,
 
-<?= yii::t('app', 'Follow the link below to reset your password') ?>:
+<?= yii::t('cms', 'Follow the link below to reset your password') ?>:
 
 <?= $resetLink ?>

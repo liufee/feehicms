@@ -16,9 +16,6 @@ return [
             'identityClass' => common\models\User::className(),
             'enableAutoLogin' => true,
         ],
-        'session' => [
-            'timeout' => 1440,//session过期时间，单位为秒
-        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -76,32 +73,35 @@ return [
         ],
         'i18n' => [
             'translations' => [
-                'app*' => [
-                    'class' => yii\i18n\PhpMessageSource::className(),
-                    'basePath' => '@backend/messages',
-                    'sourceLanguage' => 'en-US',
-                    'fileMap' => [
-                        'app' => 'app.php',
-                        'app/error' => 'error.php',
-
-                    ],
-                ],
-                'front*' => [
+                'app' => [
                     'class' => yii\i18n\PhpMessageSource::className(),
                     'basePath' => '@frontend/messages',
                     'sourceLanguage' => 'en-US',
                     'fileMap' => [
-                        'frontend' => 'frontend.php',
-                        'app/error' => 'error.php',
-
+                        'app' => 'app.php',
+                    ],
+                ],
+                'cms*' => [
+                    'class' => yii\i18n\PhpMessageSource::className(),
+                    'basePath' => '@cms/frontend/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'cms' => 'app.php',
                     ],
                 ],
             ],
         ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@frontend/views' => ['@frontend/views', '@cms/frontend/views'],
+                ],
+            ],
+        ]
     ],
     'params' => $params,
     'on beforeRequest' => function($event){
-        \feehi\components\Feehi::frontendInit();
+        feehi\components\Feehi::frontendInit();
         if(isset(\yii::$app->session['view'])) \yii::$app->viewPath = dirname(__DIR__).'/'.\yii::$app->session['view'];
         if(isset(\yii::$app->session['language'])) \yii::$app->language = yii::$app->session['language'];
     }

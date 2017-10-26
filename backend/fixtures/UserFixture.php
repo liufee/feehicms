@@ -8,9 +8,6 @@
  */
 namespace backend\fixtures;
 
-use yii\test\ActiveFixture;
-
-class UserFixture extends ActiveFixture
+class UserFixture extends \cms\backend\fixtures\UserFixture
 {
-    public $modelClass = 'backend\models\User';
 }

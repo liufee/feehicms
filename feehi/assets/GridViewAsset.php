@@ -8,15 +8,6 @@
 
 namespace feehi\assets;
 
-class GridViewAsset extends \yii\web\AssetBundle
+class GridViewAsset extends \cms\feehi\assets\GridViewAsset
 {
-    public $sourcePath = '@yii/assets';
-
-    public $js = [
-        'yii.gridView.js',
-    ];
-
-    public $depends = [
-        'feehi\assets\YiiAsset',
-    ];
 }

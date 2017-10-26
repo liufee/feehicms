@@ -25,6 +25,10 @@ return [
         ]
     ],
     'controllerMap'=>[
+        'migrate' => [
+            'class' => yii\console\controllers\MigrateController::className(),
+            'migrationPath' => ['@cms/console/migrations', '@app/migrations'],
+        ],
         'serve' => [
             'class' => yii\console\controllers\ServeController::className(),
             'docroot' => '@frontend/web',

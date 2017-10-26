@@ -7,35 +7,6 @@
  */
 namespace frontend\models\form;
 
-use frontend\models\Article;
-use yii;
-
-class ArticlePasswordForm extends \yii\base\Model
+class ArticlePasswordForm extends \cms\frontend\models\form\ArticlePasswordForm
 {
-    public $password;
-
-    public function rules()
-    {
-        return [
-            ['password', 'string', 'max'=>20]
-        ];
-    }
-
-    public function attributeLabels()
-    {
-        return [
-            "password" => yii::t('app', 'Password'),
-        ];
-    }
-
-    public function checkPassword($id)
-    {
-        if( $this->password == Article::findOne($id)['password'] ){
-            $session = yii::$app->getSession();
-            $session->set("article_password_" . $id, true);
-            return true;
-        }
-        $this->addError('password', yii::t('frontend', 'Password error'));
-        return false;
-    }
 }

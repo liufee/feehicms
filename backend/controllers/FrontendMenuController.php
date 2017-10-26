@@ -7,57 +7,9 @@
  */
 namespace backend\controllers;
 
-use yii\data\ArrayDataProvider;
-use common\models\Menu;
-use backend\actions\CreateAction;
-use backend\actions\UpdateAction;
-use backend\actions\IndexAction;
-use backend\actions\DeleteAction;
-use backend\actions\SortAction;
-
 /**
  * FrontendMenu controller
  */
-class FrontendMenuController extends \yii\web\Controller
+class FrontendMenuController extends \cms\backend\controllers\FrontendMenuController
 {
-
-    public function actions()
-    {
-        return [
-            'index' => [
-                'class' => IndexAction::className(),
-                'data' => function(){
-                    $data = Menu::getMenus(Menu::FRONTEND_TYPE);
-                    $dataProvider = new ArrayDataProvider([
-                        'allModels' => $data,
-                        'pagination' => [
-                            'pageSize' => -1
-                        ]
-                    ]);
-                    return [
-                        'dataProvider' => $dataProvider,
-                    ];
-                }
-            ],
-            'create' => [
-                'class' => CreateAction::className(),
-                'modelClass' => Menu::className(),
-                'scenario' => 'frontend',
-            ],
-            'update' => [
-                'class' => UpdateAction::className(),
-                'modelClass' => Menu::className(),
-                'scenario' => 'frontend',
-            ],
-            'delete' => [
-                'class' => DeleteAction::className(),
-                'modelClass' => Menu::className(),
-            ],
-            'sort' => [
-                'class' => SortAction::className(),
-                'modelClass' => Menu::className(),
-            ],
-        ];
-    }
-
 }

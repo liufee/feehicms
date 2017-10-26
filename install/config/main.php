@@ -25,7 +25,7 @@ $config = [
             'translations' => [
                 'install*' => [
                     'class' => yii\i18n\PhpMessageSource::className(),
-                    'basePath' => '@install/messages',
+                    'basePath' => '@cms/install/messages',
                     'sourceLanguage' => 'en-US',
                     'fileMap' => [
                         'df' => 'install.php',
@@ -34,6 +34,13 @@ $config = [
                 ],
             ],
         ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@install/views' => '@cms/install/views',
+                ],
+            ],
+        ]
     ],
     'params' => $params,
     'on beforeRequest' => function($event) {

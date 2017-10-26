@@ -8,21 +8,6 @@
 
 namespace frontend\assets;
 
-class AppAsset extends \yii\web\AssetBundle
+class AppAsset extends \cms\frontend\assets\AppAsset
 {
-
-    public $css = [
-        'static/css/style.css',
-        'static/plugins/toastr/toastr.min.css',
-    ];
-
-    public $js = [
-        'static/js/index.js',
-        'static/plugins/toastr/toastr.min.js',
-    ];
-
-    public $depends = [
-        'feehi\assets\JqueryAsset',
-    ];
-
 }

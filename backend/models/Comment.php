@@ -7,16 +7,6 @@
  */
 namespace backend\models;
 
-class Comment extends \common\models\Comment
+class Comment extends \cms\backend\models\Comment
 {
-
-    /**
-     * @param int $limit
-     * @return array|\yii\db\ActiveRecord[]
-     */
-    public static function getRecentComments($limit = 10)
-    {
-        return self::find()->orderBy('created_at desc')->limit($limit)->all();
-    }
-
 }

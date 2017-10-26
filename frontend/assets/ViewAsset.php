@@ -8,22 +8,6 @@
 
 namespace frontend\assets;
 
-class ViewAsset extends \yii\web\AssetBundle
+class ViewAsset extends \cms\frontend\assets\ViewAsset
 {
-    public $css = [
-        'static/syntaxhighlighter/styles/shCoreDefault.css'
-    ];
-
-    public $js = [
-        'static/syntaxhighlighter/scripts/shCore.js',
-        'static/syntaxhighlighter/scripts/shBrushJScript.js',
-        'static/syntaxhighlighter/scripts/shBrushPython.js',
-        'static/syntaxhighlighter/scripts/shBrushPhp.js',
-        'static/syntaxhighlighter/scripts/shBrushJava.js',
-        'static/syntaxhighlighter/scripts/shBrushCss.js',
-    ];
-
-    public $depends = [
-        'frontend\assets\AppAsset'
-    ];
 }

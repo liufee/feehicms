@@ -8,39 +8,6 @@
 
 namespace backend\controllers;
 
-use yii;
-use backend\actions\UpdateAction;
-use backend\models\Comment;
-use backend\models\search\CommentSearch;
-use backend\actions\IndexAction;
-use backend\actions\DeleteAction;
-
-class CommentController extends \yii\web\Controller
+class CommentController extends \cms\backend\controllers\CommentController
 {
-
-    public function actions()
-    {
-        return [
-            'index' => [
-                'class' => IndexAction::className(),
-                'data' => function(){
-                    $searchModel = new CommentSearch();
-                    $dataProvider = $searchModel->search(yii::$app->getRequest()->getQueryParams());
-                    return [
-                        'dataProvider' => $dataProvider,
-                        'searchModel' => $searchModel,
-                    ];
-                }
-            ],
-            'update' => [
-                'class' => UpdateAction::className(),
-                'modelClass' => Comment::className(),
-            ],
-            'delete' => [
-                'class' => DeleteAction::className(),
-                'modelClass' => Comment::className(),
-            ],
-        ];
-    }
-
 }

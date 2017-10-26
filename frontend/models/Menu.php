@@ -7,9 +7,6 @@
  */
 namespace frontend\models;
 
-use common\models\Menu as CommonMenu;
-
-class Menu extends CommonMenu
+class Menu extends \cms\frontend\models\Menu
 {
-
 }

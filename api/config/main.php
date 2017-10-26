@@ -6,7 +6,7 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'api',
+    'id' => 'app-api',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'api\controllers',
@@ -41,8 +41,28 @@ return [
                 ],
             ],
         ],
+        'i18n' => [
+            'translations' => [//多语言包设置
+                'app*' => [
+                    'class' => yii\i18n\PhpMessageSource::className(),
+                    'basePath' => '@api/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'cms' => 'app.php',
+                    ],
+                ],
+                'cms*' => [
+                    'class' => yii\i18n\PhpMessageSource::className(),
+                    'basePath' => '@cms/backend/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'cms' => 'app.php',
+                    ],
+                ],
+            ],
+        ],
         'cache' => [
-            'class' => yii\caching\DummyCache::className(),
+            'class' => yii\caching\FileCache::className(),
             'keyPrefix' => 'api',       // 唯一键前缀
         ],
         'urlManager' => [

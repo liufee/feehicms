@@ -1,19 +1,6 @@
 <?php
 namespace frontend\tests\functional;
 
-use frontend\tests\FunctionalTester;
-
-/* @var $scenario \Codeception\Scenario */
-
-class ContactCest
+class ContactCest extends \cms\frontend\tests\functional\ContactCest
 {
-    public function _before(FunctionalTester $I)
-    {
-        $I->amOnPage(['site/contact']);
-    }
-
-    public function checkContact(FunctionalTester $I)
-    {
-        $I->see('联系我们');
-    }
 }

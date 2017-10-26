@@ -22,9 +22,6 @@ return [
             'idParam' => '__backend__id',
             'returnUrlParam' => '_backend_returnUrl',
         ],
-        'session' => [
-            'timeout' => 1440,//session过期时间，单位为秒
-        ],
         'log' => [//此项具体详细配置，请访问http://wiki.feehi.com/index.php?title=Yii2_log
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -59,26 +56,47 @@ return [
         ],
         'i18n' => [
             'translations' => [//多语言包设置
-                'app*' => [
+                'app' => [
                     'class' => yii\i18n\PhpMessageSource::className(),
                     'basePath' => '@backend/messages',
                     'sourceLanguage' => 'en-US',
                     'fileMap' => [
-                        'app' => 'app.php',
-                        'app/error' => 'error.php',
+                        'cms' => 'app.php',
                     ],
                 ],
-                'menu' => [
+                'app-menu' => [
                     'class' => yii\i18n\PhpMessageSource::className(),
                     'basePath' => '@backend/messages',
-                    'sourceLanguage' => 'zh-CN',
+                    'sourceLanguage' => 'zh-US',
                     'fileMap' => [
-                        'app' => 'menu.php',
-                        'app/error' => 'error.php',
+                        'cms-menu' => 'menu.php',
+                    ],
+                ],
+                'cms*' => [
+                    'class' => yii\i18n\PhpMessageSource::className(),
+                    'basePath' => '@cms/backend/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'cms' => 'app.php',
+                    ],
+                ],
+                'cms-menu' => [
+                    'class' => yii\i18n\PhpMessageSource::className(),
+                    'basePath' => '@cms/backend/messages',
+                    'sourceLanguage' => 'zh-US',
+                    'fileMap' => [
+                        'cms-menu' => 'menu.php',
                     ],
                 ],
             ],
         ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@backend/views' => ['@backend/views', '@cms/backend/views'],
+                ],
+            ],
+        ]
     ],
     'on beforeRequest' => [feehi\components\Feehi::className(), 'backendInit'],
     'as access' => [

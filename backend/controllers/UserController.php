@@ -8,50 +8,6 @@
 
 namespace backend\controllers;
 
-use yii;
-use frontend\models\User;
-use frontend\models\search\UserSearch;
-use backend\actions\CreateAction;
-use backend\actions\UpdateAction;
-use backend\actions\IndexAction;
-use backend\actions\DeleteAction;
-use backend\actions\SortAction;
-
-class UserController extends \yii\web\Controller
+class UserController extends \cms\backend\controllers\UserController
 {
-
-    public function actions()
-    {
-        return [
-            'index' => [
-                'class' => IndexAction::className(),
-                'data' => function(){
-                    $searchModel = new UserSearch();
-                    $dataProvider = $searchModel->search(yii::$app->getRequest()->getQueryParams());
-                    return [
-                        'dataProvider' => $dataProvider,
-                        'searchModel' => $searchModel,
-                    ];
-                }
-            ],
-            'create' => [
-                'class' => CreateAction::className(),
-                'modelClass' => User::className(),
-                'scenario' => 'create',
-            ],
-            'update' => [
-                'class' => UpdateAction::className(),
-                'modelClass' => User::className(),
-                'scenario' => 'update',
-            ],
-            'delete' => [
-                'class' => DeleteAction::className(),
-                'modelClass' => User::className(),
-            ],
-            'sort' => [
-                'class' => SortAction::className(),
-                'modelClass' => User::className(),
-            ],
-        ];
-    }
 }

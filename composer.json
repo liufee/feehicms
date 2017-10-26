@@ -1,5 +1,5 @@
 {
-    "name": "feehi/cms",
+    "name": "feehi/feehicms",
     "description": "Feehi CMS Project Template",
     "keywords": ["feehicms", "yii2 cms", "cms", "php framework", "yii2 advanced", "project template", "feehi", "php", "php cms"],
     "homepage": "http://cms.feehi.com/",
@@ -13,11 +13,7 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4.0",
-        "yiisoft/yii2": ">=2.0.6",
-        "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*",
-        "feehi/yii2-swoole": ">=0.0.5"
+        "feehi/cms-core": ">=0.1.8"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -30,17 +26,7 @@
     "config": {
         "process-timeout": 1800
     },
-    "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
-        }
-    },
     "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        },
         {
             "type": "composer",
             "url": "https://asset-packagist.org"

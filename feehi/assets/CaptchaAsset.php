@@ -8,15 +8,6 @@
 
 namespace feehi\assets;
 
-class CaptchaAsset extends \yii\web\AssetBundle
+class CaptchaAsset extends \cms\feehi\assets\CaptchaAsset
 {
-    public $sourcePath = '@yii/assets';
-
-    public $js = [
-        'yii.captcha.js',
-    ];
-
-    public $depends = [
-        'feehi\assets\YiiAsset',
-    ];
 }

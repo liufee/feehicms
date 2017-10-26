@@ -7,44 +7,6 @@
  */
 namespace backend\actions;
 
-use yii;
-
-class CreateAction extends \yii\base\Action
+class CreateAction extends \cms\backend\actions\CreateAction
 {
-
-    public $modelClass;
-
-    public $scenario = 'default';
-
-    public $data = [];
-
-
-    /**
-     * create创建页
-     *
-     * @return string|\yii\web\Response
-     */
-    public function run()
-    {
-        /* @var $model yii\db\ActiveRecord */
-        $model = new $this->modelClass;
-        $model->setScenario( $this->scenario );
-        if (yii::$app->getRequest()->getIsPost()) {
-            if ($model->load(yii::$app->getRequest()->post()) && $model->save()) {
-                yii::$app->getSession()->setFlash('success', yii::t('app', 'Success'));
-                return $this->controller->redirect(['index']);
-            } else {
-                $errors = $model->getErrors();
-                $err = '';
-                foreach ($errors as $v) {
-                    $err .= $v[0] . '<br>';
-                }
-                Yii::$app->getSession()->setFlash('error', $err);
-            }
-        }
-        $model->loadDefaultValues();
-        $data = array_merge(['model' => $model], $this->data);
-        return $this->controller->render('create', $data);
-    }
-
 }

@@ -11,25 +11,6 @@ namespace backend\grid;
 /**
  * @inheritdoc
  */
-class DataColumn extends \yii\grid\DataColumn
+class DataColumn extends \cms\backend\grid\DataColumn
 {
-
-    public $headerOptions = [];
-
-    public $width = '60px';
-
-    public $contentOptions = ['style' => 'word-wrap: break-word; word-break: break-all;'];
-
-    /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        parent::init();
-
-        if (! isset($this->headerOptions['width'])) {
-            $this->headerOptions['width'] = $this->width;
-        }
-    }
-
 }

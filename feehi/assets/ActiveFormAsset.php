@@ -8,15 +8,6 @@
 
 namespace feehi\assets;
 
-class ActiveFormAsset extends \yii\web\AssetBundle
+class ActiveFormAsset extends \cms\feehi\assets\ActiveFormAsset
 {
-    public $sourcePath = '@yii/assets';
-
-    public $js = [
-        'yii.activeForm.js',
-    ];
-
-    public $depends = [
-        'feehi\assets\YiiAsset',
-    ];
 }

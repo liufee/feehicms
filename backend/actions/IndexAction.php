@@ -8,20 +8,6 @@
 
 namespace backend\actions;
 
-use \Closure;
-
-class IndexAction extends \yii\base\Action
+class IndexAction extends \cms\backend\actions\IndexAction
 {
-
-    public $data;
-
-    public function run()
-    {
-        $data = $this->data;
-        if( $data instanceof Closure){
-            $data = call_user_func( $this->data );
-        }
-        return $this->controller->render('index', $data);
-    }
-
 }

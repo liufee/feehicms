@@ -8,7 +8,6 @@
 
 namespace api\models;
 
-
 class User extends \frontend\models\User
 {
     public function fields()

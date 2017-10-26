@@ -8,11 +8,6 @@
 
 namespace feehi\assets;
 
-class JqueryAsset extends \yii\web\AssetBundle
+class JqueryAsset extends \cms\feehi\assets\JqueryAsset
 {
-    public $sourcePath = '@bower/jquery/dist';
-
-    public $js = [
-        'jquery.js',
-    ];
 }

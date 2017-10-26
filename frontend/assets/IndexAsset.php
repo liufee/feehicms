@@ -9,13 +9,6 @@
 namespace frontend\assets;
 
 
-class IndexAsset extends \yii\web\AssetBundle
+class IndexAsset extends \cms\frontend\assets\IndexAsset
 {
-    public $js = [
-        'static/js/responsiveslides.min.js',
-    ];
-
-    public $depends = [
-        'frontend\assets\AppAsset'
-    ];
 }

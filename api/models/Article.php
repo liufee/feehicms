@@ -7,16 +7,6 @@
  */
 namespace api\models;
 
-class Article extends \common\models\Article
+class Article extends \cms\api\models\Article
 {
-    public function fields()
-    {
-        return [
-            'title',
-            "description" => "summary",
-            "content" => function($model){
-                return $model->articleContent->content;
-            }
-        ];
-    }
 }

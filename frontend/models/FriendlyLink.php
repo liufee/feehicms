@@ -7,9 +7,6 @@
  */
 namespace frontend\models;
 
-use common\models\FriendlyLink as CommonFriendLink;
-
-class FriendlyLink extends CommonFriendLink
+class FriendlyLink extends \cms\frontend\models\FriendlyLink
 {
-
 }
