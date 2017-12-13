@@ -1,7 +1,7 @@
 <?php
 $config = [
     'name' => 'Feehi CMS',
-    'version' => '1.0.0-beta3',
+    'version' => '1.0.0-RC2',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -42,14 +42,54 @@ $config = [
                 'from' => ['admin@feehi.com' => 'Feehi CMS robot ']
             ],
         ],
-        'view' => [
-            'class' => feehi\components\View::className(),
-        ],
         'feehi' => [
             'class' => feehi\components\Feehi::className(),
         ],
         'authManager' => [
             'class' => yii\rbac\DbManager::className(),
+        ],
+        'assetManager' => [
+            'bundles' => [
+                yii\widgets\ActiveFormAsset::className() => [
+                    'js' => [
+                        'a' => 'yii.activeForm.js'
+                    ],
+                ],
+                yii\bootstrap\BootstrapAsset::className() => [
+                    'css' => [],
+                    'sourcePath' => null,
+                ],
+                yii\captcha\CaptchaAsset::className() => [
+                    'js' => [
+                        'a' => 'yii.captcha.js'
+                    ],
+                ],
+                yii\grid\GridViewAsset::className() => [
+                    'js' => [
+                        'a' => 'yii.gridView.js'
+                    ],
+                ],
+                yii\web\JqueryAsset::className() => [
+                    'js' => [
+                        'a' => 'jquery.js'
+                    ],
+                ],
+                yii\widgets\PjaxAsset::className() => [
+                    'js' => [
+                        'a' => 'jquery.pjax.js'
+                    ],
+                ],
+                yii\web\YiiAsset::className() => [
+                    'js' => [
+                        'a' => 'yii.js'
+                    ],
+                ],
+                yii\validators\ValidationAsset::className() => [
+                    'js' => [
+                        'a' => 'yii.validation.js'
+                    ],
+                ],
+            ],
         ],
     ],
 ];

@@ -55,20 +55,16 @@ return [
                 //'post/22'=>'site/detail',
                 //'<controller:detail>/<id:\d+>' => '<controller>/index',
                 '' => 'article/index',
-                //'<controller:w+>/<action:\w+>'=>'<controller>/<action>',
                 '<page:\d+>' => 'article/index',
                 'login' => 'site/login',
                 'signup' => 'site/signup',
-                'about|contact' => 'page/view',
-                'page/<name:\w+>' => 'page/view',
                 'view/<id:\d+>' => 'article/view',
+                'page/<name:\w+>' => 'page/view',
                 'comment' => 'article/comment',
-                'article/view/id/<id:\d+>' => 'article/view',
                 'search' => 'search/index',
                 'tag/<tag:\w+>' => 'search/tag',
-                'cat/<cat:\w+>' => 'article/index',
+                'rss' => 'article/rss',
                 'list/<page:\d+>' => 'site/index',
-                'python|java|javascript' => 'article/index',
             ],
         ],
         'i18n' => [
@@ -90,6 +86,42 @@ return [
                     ],
                 ],
             ],
+        ],
+        'assetManager' => [
+            'bundles' => [
+                yii\web\JqueryAsset::className() => [
+                    'js' => [],
+                ],
+                frontend\assets\AppAsset::className() => [
+                    'css' => [
+                        'a' => 'static/css/style.css',
+                        'b' => 'static/plugins/toastr/toastr.min.css',
+                    ],
+                    'js' => [
+                        'a' => 'static/js/jquery.min.js',
+                        'b' => 'static/js/index.js',
+                        'c' => 'static/plugins/toastr/toastr.min.js',
+                    ],
+                ],
+                frontend\assets\IndexAsset::className() => [
+                    'js' => [
+                        'a' => 'static/js/responsiveslides.min.js',
+                    ]
+                ],
+                frontend\assets\ViewAsset::className() => [
+                    'css' => [
+                        'a' => 'static/syntaxhighlighter/styles/shCoreDefault.css'
+                    ],
+                    'js' => [
+                        'a' => 'static/syntaxhighlighter/scripts/shCore.js',
+                        'b' => 'static/syntaxhighlighter/scripts/shBrushJScript.js',
+                        'c' => 'static/syntaxhighlighter/scripts/shBrushPython.js',
+                        'd' => 'static/syntaxhighlighter/scripts/shBrushPhp.js',
+                        'e' => 'static/syntaxhighlighter/scripts/shBrushJava.js',
+                        'f' =>'static/syntaxhighlighter/scripts/shBrushCss.js',
+                    ]
+                ],
+            ]
         ],
         'view' => [
             'theme' => [
